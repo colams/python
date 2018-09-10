@@ -75,11 +75,17 @@ WSGI_APPLICATION = 'gettingstarted.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
+# postgres://oubdidlgznxybn:867feeb4e92488af254ba3c1f9fe5fd9eaea6ce1cbde36fcd128b5cf53fe174a@ec2-184-72-247-70.compute-1.amazonaws.com:5432/da1gp54q1lesm8
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'da1gp54q1lesm8',  # 数据库名称
+        'USER': 'oubdidlgznxybn',  # 拥有者，这个一般没修改
+        'PASSWORD': '867feeb4e92488af254ba3c1f9fe5fd9eaea6ce1cbde36fcd128b5cf53fe174a',  # 密码，自己设定的
+        'HOST': 'ec2-184-72-247-70.compute-1.amazonaws.com',  # 默认的就没写
+        'PORT': '5432',
     }
 }
 
